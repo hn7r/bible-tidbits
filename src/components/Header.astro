@@ -65,8 +65,11 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
         position: sticky;
         top: 0;
-        z-index: 100;
+        z-index: 1000; /* Much higher z-index */
+        backdrop-filter: blur(10px); /* Adds blur effect behind header */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
     }
+
 
     h2 {
         margin: 0;
@@ -147,6 +150,7 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
     @media (max-width: 720px) {
         header {
             padding: 0 0.5em;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         nav {
@@ -178,6 +182,7 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
             flex-direction: column;
             padding: 1em;
             gap: 1em;
+            z-index: 999;
         }
 
         .nav-menu.open {
