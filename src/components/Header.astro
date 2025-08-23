@@ -65,11 +65,10 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
         position: sticky;
         top: 0;
-        z-index: 1000; /* Much higher z-index */
-        backdrop-filter: blur(10px); /* Adds blur effect behind header */
-        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
-
 
     h2 {
         margin: 0;
@@ -108,6 +107,11 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         cursor: pointer;
         padding: 8px;
         gap: 4px;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
     .hamburger-line {
@@ -115,6 +119,20 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         height: 3px;
         background-color: rgb(var(--black));
         transition: all 0.3s ease;
+        transform-origin: center;
+        position: absolute;
+    }
+
+    .hamburger-line:nth-child(1) {
+        top: 12px;
+    }
+
+    .hamburger-line:nth-child(2) {
+        top: 18px;
+    }
+
+    .hamburger-line:nth-child(3) {
+        top: 24px;
     }
 
     .nav-menu {
@@ -212,9 +230,10 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
             height: 24px;
         }
 
-        /* Hamburger animation */
+        /* Perfect X hamburger animation */
         .mobile-menu-btn.active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            top: 18px;
+            transform: rotate(45deg);
         }
 
         .mobile-menu-btn.active .hamburger-line:nth-child(2) {
@@ -222,7 +241,8 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         }
 
         .mobile-menu-btn.active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            top: 18px;
+            transform: rotate(-45deg);
         }
     }
 
@@ -237,6 +257,7 @@ import instagramIcon from '../assets/instagram-logo-thin.svg';
         }
     }
 </style>
+
 
 <script>
     function initMobileMenu() {
