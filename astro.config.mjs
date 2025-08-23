@@ -7,6 +7,6 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://hn7r.github.io',
-    base: '/bible-tidbits',
+    base: '/bible-tidbits/',
 	integrations: [mdx(), sitemap()],
 });
