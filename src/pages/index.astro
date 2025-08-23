@@ -2,24 +2,122 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, YOUTUBE_URL, PODCAST_URL } from '../consts';
+
+
+import microphoneIcon from '../assets/microphone.svg';
+import youtubeIcon from '../assets/youtube.svg';
+import articleIcon from '../assets/article-line.svg';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-            <div class="hero">
-                <div class="hero-content">
-                    <h1 class="hero-heading">Bible Tidbits</h1>
-                    <p class="hero-subheading">Equipping Minds and Stirring Hearts Through the Word</p>
-                </div>
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgb(var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: rgb(var(--black));
+        }
+
+        .card p {
+            color: rgb(var(--gray));
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 720px) {
+            main {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<Header />
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-heading">Bible Tidbits</h1>
+            <p class="hero-subheading">Equipping Minds and Stirring Hearts Through the Word</p>
+        </div>
+    </section>
+    <br />
+    <section class="cards">
+        <a href="/watch" class="card">
+            <div class="card-icon">
+                <img src={youtubeIcon.src} alt="Watch" width="84" height="84" />
             </div>
-		</main>
-		<Footer />
-	</body>
+            <h3>Watch</h3>
+            <p>Bible studies, book reviews, and more!</p>
+        </a>
+
+        <a href="/listen" class="card">
+            <div class="card-icon">
+                <img src={microphoneIcon.src} alt="Listen" width="84" height="84" />
+            </div>
+            <h3>Listen</h3>
+            <p>Weekly Bible studies, verse-by-verse.</p>
+        </a>
+
+        <a href="/read" class="card">
+            <div class="card-icon">
+                <img src={articleIcon.src} alt="Read" width="84" height="84" />
+            </div>
+            <h3>Read</h3>
+            <p>Christ-gloifying articles</p>
+        </a>
+    </section>
+</main>
+<Footer />
+</body>
 </html>
