@@ -17,8 +17,8 @@
 		rgba(var(--gray), 33%);
 }
 @font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-family: "Playfair Display";
+	src: url("/fonts/PlayfairDisplay-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -31,7 +31,7 @@
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: "Playfair Display", sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -44,7 +44,7 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 720px;
+	width: 80vw;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -152,4 +152,40 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+.hero {
+    height: 70vh; /* 70% of screen height */
+    width: 100%;
+    background: url('../assets/open-bible.jpg') center/cover no-repeat;
+    display: flex;               /* centers content */
+    align-items: center;         /* vertical centering */
+    justify-content: center;     /* horizontal centering */
+    color: white;                /* readable text */
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;                    /* cover whole hero */
+    background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+}
+
+.hero-content {
+    position: relative; /* keep text above overlay */
+    z-index: 1;
+}
+
+.hero-heading {
+    font-size: 10rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-subheading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
 }
