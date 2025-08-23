@@ -14,5 +14,3 @@ This ministry began as a simple devotional podcast I created each week for my yo
 What makes Bible Tidbits unique is the balance between scholarship and accessibility. While I have a deep love for the academic side of the Bible, I am equally passionate about making its teaching clear and practical. I know life is busy, but I believe this short, faithful content can open up the depth of God's word and help us all grow in our faith and knowledge.
 
 So, I encourage you to explore this website and return to it often, as we will be adding resources regularly. Also, be sure to follow us on social media for even more ways to engage. And above all, remember the enduring truth of Isaiah 40:8 The grass withers, the flower fades, but the word of our God will stand forever
-
-![blog placeholder](../../assets/bible-tidbits.svg)

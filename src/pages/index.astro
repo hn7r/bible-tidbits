@@ -6,7 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE, YOUTUBE_URL, PODCAST_URL } from '../const
 
 
 import microphoneIcon from '../assets/microphone.svg';
-import youtubeIcon from '../assets/youtube.svg';
+import youtubeIcon from '../assets/youtube-outline.svg';
 import articleIcon from '../assets/article-line.svg';
 ---
 
@@ -93,7 +93,7 @@ import articleIcon from '../assets/article-line.svg';
     </section>
     <br />
     <section class="cards">
-        <a href="/watch" class="card">
+        <a href={YOUTUBE_URL} target="_blank" class="card">
             <div class="card-icon">
                 <img src={youtubeIcon.src} alt="Watch" width="84" height="84" />
             </div>
@@ -101,7 +101,7 @@ import articleIcon from '../assets/article-line.svg';
             <p>Bible studies, book reviews, and more!</p>
         </a>
 
-        <a href="/listen" class="card">
+        <a href={PODCAST_URL} target="_blank" class="card">
             <div class="card-icon">
                 <img src={microphoneIcon.src} alt="Listen" width="84" height="84" />
             </div>
@@ -109,12 +109,12 @@ import articleIcon from '../assets/article-line.svg';
             <p>Weekly Bible studies, verse-by-verse.</p>
         </a>
 
-        <a href="/read" class="card">
+        <a href="/articles" class="card">
             <div class="card-icon">
                 <img src={articleIcon.src} alt="Read" width="84" height="84" />
             </div>
             <h3>Read</h3>
-            <p>Christ-gloifying articles</p>
+            <p>Christ-glorifying articles</p>
         </a>
     </section>
 </main>
